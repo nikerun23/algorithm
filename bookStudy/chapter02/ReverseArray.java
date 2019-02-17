@@ -12,8 +12,8 @@ public class ReverseArray {
 	}
 	
 	static int[] swapArr(int[] arr) {
-		int cnt = arr.length / 2;
-		int endIdx = arr.length - 1;
+		int cnt = arr.length / 2; // 정렬 횟수
+		int endIdx = arr.length - 1; // 마지막 인덱스
 		for (int i = 0; i < cnt; i++) {
 			int temp = arr[i];
 			arr[i] = arr[endIdx - i];
