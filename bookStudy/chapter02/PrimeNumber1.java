@@ -70,9 +70,9 @@ public class PrimeNumber1 {
     }
     public static void main(String[] args) {
 
-        primeNumberV1();
-        primeNumberV2();
-        primeNumberV3();
+        primeNumberV1(); // 모든 수를 확인하는 방법 = 78,022
+        primeNumberV2(); // 소수로만 확인하는 방법 = 14,622
+        primeNumberV3(); // 제곱근으로 확인하는 방법 = 1,324
         
     }
 
