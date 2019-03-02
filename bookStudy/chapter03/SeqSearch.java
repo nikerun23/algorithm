@@ -6,12 +6,11 @@ public class SeqSearch {
 
 	// 요솟수가 n인 배열a에서 key와 같은 요소를 선형 검색합니다
 	static int seqSearch(int[]a, int n, int key) {
-		int i = 0;
-		while(true) {
-			if (i == n) return -1; // 검색 실패 -1을 반환
-			if (a[i] == key) return i; // 검색 성공 인덱스를 반환
-			i++;
+		
+		for (int i = 0; i < a.length; i++) {
+			if (key == a[i]) return i; // 검색 성공 인덱스를 반환
 		}
+		return -1; // 검색 실패 -1을 반환
 	}
 	
 	public static void main(String[] args) {
