@@ -2,7 +2,7 @@ package algorithm.bookStudy.chapter03;
 
 import java.util.Scanner;
 
-// 선형 검색 보초법
+// 선형 검색 (보초법)
 public class SeqSearch {
 
 	// 요솟수가 n인 배열a에서 key와 같은 요소를 선형 검색합니다
@@ -14,7 +14,7 @@ public class SeqSearch {
 			if (key == a[i]) break;
 			i++;
 		}
-		return n == i ? -1 : i; // 인덱스를 반환
+		return n == i ? -1 : i; // 인덱스를 반환 (인덱스 마지막은 보초법이므로 -1 반환)
 	}
 	
 	public static void main(String[] args) {
@@ -22,7 +22,7 @@ public class SeqSearch {
 		Scanner stdIn = new Scanner(System.in);
 		System.out.print("요솟수 : ");
 		int n = stdIn.nextInt();
-		int[] x = new int[n+1]; // 요솟수가 n인 배열 (보초법 +1)
+		int[] x = new int[n+1]; // 요솟수가 n인 배열 (보초법을 위한 +1)
 		
 		for (int i = 0; i < n; i++) {
 			System.out.print("x["+i+"] : ");
