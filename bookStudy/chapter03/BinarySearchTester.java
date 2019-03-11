@@ -20,6 +20,12 @@ public class BinarySearchTester {
 		
 		System.out.print("검색할 값 : "); // 키값을 입력
 		int key = stdIn.nextInt();
+		
+		Arrays.sort(x); // 배열 정렬
+		System.out.println("++++++++++ sort ++++++++++");
+		for (int i = 0; i < x.length; i++) { // 정렬된 배열을 출력
+            System.out.println("x["+i+"] : " + x[i]);
+        }
 		int idx = Arrays.binarySearch(x, key); // 배열 x에서 키 값이 key인 요소를 검색 Arrays.binarySearch
 		
 		if (idx < 0) System.out.print("그 값의 요소가 없습니다.");
