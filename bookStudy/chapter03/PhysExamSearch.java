@@ -28,6 +28,8 @@ public class PhysExamSearch {
 
 		// 오름차순으로 정렬하기 위한 Comparator
 		public static final Comparator<PhysData> HEIGHT_ORDER = new HeightOrderComparator();
+		// 내림차순으로 정렬하기 위한 Comparator
+		public static final Comparator<PhysData> VISION_ORDER = new VisionOrderComparator();
 		
 		private static class HeightOrderComparator implements Comparator<PhysData> {
 
@@ -39,6 +41,16 @@ public class PhysExamSearch {
 			
 		}
 		
+		private static class VisionOrderComparator implements Comparator<PhysData> {
+			
+			@Override
+			public int compare(PhysData o1, PhysData o2) {
+				return (o1.vision > o2.vision) ? 1 : // o1이 o2보다 크면 1
+					(o1.vision < o2.vision) ? -1 : 0; // o1이 o2보다 작으면 -1, o1이 o2보다 같으면 0
+			}
+			
+		}
+		
 	}
 	
 	public static void main(String[] args) {
@@ -46,10 +58,10 @@ public class PhysExamSearch {
 		Scanner stdIn = new Scanner(System.in);
 		
 		PhysData[] x = { // 자연정렬된 배열
-				new PhysData("이유희", 160, 1.0)
+				new PhysData("이유희", 160, 0.2)
 				,new PhysData("유시민", 173, 0.5)
-				,new PhysData("문재인", 180, 2.3)
-				,new PhysData("이현근", 188, 2.0)
+				,new PhysData("문재인", 180, 2.0)
+				,new PhysData("이현근", 188, 2.3)
 				};
 		
 		System.out.print("몇 cm인 사람을 찾습니까 ? : ");
@@ -58,6 +70,21 @@ public class PhysExamSearch {
 				x // 배열 x에서
 				, new PhysData("", height, 0.0) // 키가 height인 요소를
 				, PhysData.HEIGHT_ORDER // HEIGHT_ORDER에 의해 검색
+				);
+		
+		if (idx < 0)
+			System.out.println("요소가 없습니다.");
+		else {
+			System.out.println("요소가 x[" + idx + "]에 있습니다");
+			System.out.println("찾은 데이터 : " + x[idx]); // toString
+		}
+		
+		System.out.print("어떠한 시력의 사람을 찾습니까 ? : ");
+		double vision = stdIn.nextDouble(); // 키갑 입력
+		idx = Arrays.binarySearch(
+				x // 배열 x에서
+				, new PhysData("", 0, vision) // 시력이 vision인 요소를
+				, PhysData.VISION_ORDER // VISION_ORDER에 의해 검색
 				);
 		
 		if (idx < 0)
