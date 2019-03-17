@@ -20,18 +20,18 @@ public class IntStack {
 	}
 	
 	// 실핼 시 예외 : 스택이 비어있음
-	public class EmptyIntStackEception extends RuntimeException {
-		public EmptyIntStackEception() {}
+	public class EmptyIntStackException extends RuntimeException {
+		public EmptyIntStackException() {}
 	}
 	
 	// 실핼 시 예외 : 스택이 가득참
-	public class OverflowIntStackEception extends RuntimeException {
-		public OverflowIntStackEception() {}
+	public class OverflowIntStackException extends RuntimeException {
+		public OverflowIntStackException() {}
 	}
 	
 	// 스택에 x를 푸시
-	public int push(int x) throws OverflowIntStackEception {
-		if (ptr >= max) throw new OverflowIntStackEception(); // 스택이 가득참
+	public int push(int x) throws OverflowIntStackException {
+		if (ptr >= max) throw new OverflowIntStackException(); // 스택이 가득참
 		return stk[ptr++] = x;
 	}
 	
