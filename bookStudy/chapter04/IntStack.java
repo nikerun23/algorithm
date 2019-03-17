@@ -4,9 +4,9 @@ import java.util.EmptyStackException;
 
 public class IntStack {
 	
-	private int max;
-	private int ptr;
-	private int[] stk;
+	private int max; // 스택의 용량
+	private int ptr; // 스택 포인터
+	private int[] stk; // 스택 본체
 	
 	// 생성자
 	public IntStack(int capacity) {
