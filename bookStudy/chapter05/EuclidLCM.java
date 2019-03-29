@@ -3,7 +3,7 @@ package algorithm.bookStudy.chapter05;
 import java.util.Scanner;
 
 // 유클리드 호제법으로 최소공배수 구하기
-public class EuclidGCDEx2 {
+public class EuclidLCM {
     
     // 정수의 x, y의 최대공약수를 구하여 반환합니다
     public static int gcd(int x, int y) {
