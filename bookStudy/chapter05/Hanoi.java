@@ -8,10 +8,12 @@ public class Hanoi {
 
     static void move(int no, int x, int y) {
         
+        String[] names = {"A","B","C"};
+        
         if (no > 1) {
             move(no-1, x, 6-x-y); // 6-x-y = 2 는 중간기등의 번호
         }
-        System.out.printf("원반[%d]을 %d 기둥에서 %d 기둥으로 옮김\n", no, x, y);
+        System.out.printf("원반[%d]을 %s 기둥에서 %s 기둥으로 옮김\n", no, names[x-1], names[y-1]);
         if (no > 1) {
             move(no-1, 6-x-y, y);
         }
