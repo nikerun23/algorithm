@@ -24,6 +24,7 @@ public class QueenB {
     }
 
     public static void main(String[] args) {
+    	// 가지 뻗기 방식으로 16,777,216개의 조합이 나온
         set(0);                 // 0열에 퀸을 배치합니다.
     }
 
