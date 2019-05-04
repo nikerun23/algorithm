@@ -5,7 +5,7 @@ public class BubbleSort2 {
 
 	// 버블정렬
 	static void bubblesort(int[] a, int n) {
-		int count = 0;
+		int count = 0; // 검색 횟수
 		// a배열 사이즈의 -1 만큼 패스를 실행한다
 		for(int i = 0; i < n - 1; i++) {
 			int exchg = 0; // 패스의 교환 횟수를 기록합니다
@@ -13,9 +13,9 @@ public class BubbleSort2 {
 			for (int j = n - 1; j > i; j--) {
 				if (a[j - 1] > a[j]) {
 					swap(a, j - 1, j);
-					count++;
 					exchg++;
 				}
+				count++;
 			}
 			if (exchg == 0) break; // 교환이 이루어지지 않으면 종료합니다
 		}
