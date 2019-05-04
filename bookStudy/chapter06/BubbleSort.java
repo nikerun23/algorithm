@@ -5,6 +5,7 @@ public class BubbleSort {
 
 	// 버블정렬
 	static void bubblesort(int[] a, int n) {
+		int count = 0; // 검색 횟수
 		// a배열 사이즈의 -1 만큼 패스를 실행한다
 		for(int i = 0; i < n - 1; i++) {
 			// 패쓰
@@ -12,8 +13,10 @@ public class BubbleSort {
 				if (a[j - 1] > a[j]) {
 					swap(a, j - 1, j);
 				}
+				count++;
 			}
 		}
+		System.out.println("검색 횟수 : " + count);
 	}
 	
 	// 배열의값을 바꿉니다
