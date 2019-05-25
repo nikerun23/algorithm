@@ -8,7 +8,7 @@ public class BubbleSort {
 		int count = 0; // 검색 횟수
 		// a배열 사이즈의 -1 만큼 패스를 실행한다
 		for(int i = 0; i < n - 1; i++) {
-			// 패쓰
+			// 패쓰, 마지막 인덱스 부터 왼쪽으로 비교한다
 			for (int j = n - 1; j > i; j--) {
 				if (a[j - 1] > a[j]) {
 					swap(a, j - 1, j);
@@ -19,7 +19,7 @@ public class BubbleSort {
 		System.out.println("검색 횟수 : " + count);
 	}
 	
-	// 배열의값을 바꿉니다
+	// 배열의 값을 바꿉니다
 	static void swap(int[] a, int idx1, int idx2) {
 		int temp = a[idx1];
 		a[idx1] = a[idx2];
