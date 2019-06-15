@@ -10,19 +10,19 @@ public class QuickSort2 {
 		int t = a[idx1];  a[idx1] = a[idx2];  a[idx2] = t;
 	}
 
-	// 퀵 정렬(배열을  나누는 과정을 출력합니다)
+	// 퀵 정렬 (Stack을 이용하여 그룹 인덱스를 쌓습니다)
 	static void quickSort(int[] a, int left, int right) {
 		
-		IntStack lstack = new IntStack(right - left + 1); // 커서의 크기를 설정한다
-		IntStack rstack = new IntStack(right - left + 1); // 커서의 크기를 설정한다
+		IntStack lstack = new IntStack(right - left + 1); // 커서의 크기를 설정한다 8 - 0 + 1 = 9
+		IntStack rstack = new IntStack(right - left + 1); // 커서의 크기를 설정한다 8 - 0 + 1 = 9
 		
-		lstack.push(left); // 스택에 left 인덱스 값을 쌓는다
-		rstack.push(right); // 스택에 right 인덱스 값을 쌓는다
+		lstack.push(left); // 스택에 left 인덱스 값을 쌓는다 0
+		rstack.push(right); // 스택에 right 인덱스 값을 쌓는다 8
 		
 		while(lstack.isEmprty() != true) {
-			int pl = left = lstack.pop();	// 왼쪽 커서
-			int pr = right = rstack.pop();	// 오른쪽 커서
-			int x = a[(left + right) / 2];		// 피벗
+			int pl = left = lstack.pop(); // 왼쪽 커서 0, 두번째는 5
+			int pr = right = rstack.pop(); // 오른쪽 커서 8, 두번째는 8
+			int x = a[(left + right) / 2]; // 피벗 5
 
 			do {
 				while (a[pl] < x) pl++;
@@ -31,13 +31,13 @@ public class QuickSort2 {
 					swap(a, pl++, pr--);
 			} while (pl <= pr);
 
-			if (left < pr) {
-				lstack.push(left); // 왼쪽 그릅 범위의
-				rstack.push(pr); // 인덱스를 푸시합니다
+			if (left < pr) { // 0 < 4
+				lstack.push(left); // 왼쪽 그릅 범위의 0
+				rstack.push(pr); // 인덱스를 푸시합니다 4
 			}
-			if (pl < right) {
-				lstack.push(pl); // 오른쪽 그룹 범위의
-				rstack.push(right); // 인덱스를 푸시합니다
+			if (pl < right) { // 5 < 8
+				lstack.push(pl); // 오른쪽 그룹 범위의 0 5
+				rstack.push(right); // 인덱스를 푸시합니다 4 8
 			}
 		}
 	}
