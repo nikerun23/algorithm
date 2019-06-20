@@ -24,6 +24,7 @@ public class MergeArray {
 		int[] b = {1, 2, 3, 4, 9, 16, 21};
 		int[] c = new int[13];
 		
+		// 정렬되어 있는 a와 b배열을 병합하여 c배열에 복사합니다
 		merge(a, a.length, b, b.length, c);
 		
 		System.out.print("int[] c = {");
