@@ -45,7 +45,7 @@ class PhyscExamSortV {
 		};
 
 		Arrays.sort(x,								// 배열 x를 
-						PhyscData.VISION_ORDER		// VISION_ORDER을 사용하여 정렬
+						PhyscData.VISION_RORDER		// VISION_ORDER을 사용하여 정렬
 					  );
 
 		System.out.println("■ 신체 검사 리스트 ■");
