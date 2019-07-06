@@ -23,9 +23,9 @@ class PhyscExamSortV {
 		}
 
 		// 시력 내림차순용 comparator
-		static final Comparator<PhyscData> VISION_ORDER = new HeightOrderComparator();
+		static final Comparator<PhyscData> VISION_RORDER = new VisionRorderComparator();
 
-		private static class HeightOrderComparator implements Comparator<PhyscData> {
+		private static class VisionRorderComparator implements Comparator<PhyscData> {
 			public int compare(PhyscData d1, PhyscData d2) {
 				return (d1.vision < d2.vision) ?  1 : (d1.vision > d2.vision) ? -1 : 0;
 			}
