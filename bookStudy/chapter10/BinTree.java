@@ -53,6 +53,9 @@ public class BinTree<K, V> {
 		comparator = c;
 	}
 	
-	
+	// 두개의 키 값을 비교
+	private int comp(K key1, K key2) {
+		return (comparator == null) ? ((Comparable<K>) key1).compareTo(key2) : comparator.compare(key1, key2);
+	}
 	
 }
